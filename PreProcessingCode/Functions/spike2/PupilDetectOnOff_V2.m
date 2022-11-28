@@ -1,0 +1,9 @@
+function[PupOnTS, PupOffTS]= PupilDetectOnOff_V2(data,threshold1,threshold2,stimITI,spike2SR)
+if skewness(data)<0, disp('Pupil Data Negative, flipping the sign'); data=-data; end % flip the sign if the data are going in the negative direction 
+vis=data; 
+vis=vis-nanmean(vis);
+vis=(vis/max(vis)>threshold1); %use 0.6 threshold to get ride of start and end artifacts
+[vison,visoff]=squaredetect(vis,threshold2);
+PupOnTS=vison*1/spike2SR;
+PupOffTS=visoff*1/spike2SR;
+tmp4=diff(PupOnTS); 
