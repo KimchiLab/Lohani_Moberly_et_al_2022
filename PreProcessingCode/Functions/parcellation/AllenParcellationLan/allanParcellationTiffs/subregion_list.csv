@@ -1,0 +1,57 @@
+,Label,Explanation
+1,R-VlSp,Right primary visual area
+2,L-VlSp,Left primary visual area
+3,R-VlSpm,Right posteromedial visual area
+4,L-VlSpm,Left posteromedial visual area
+5,R-VlSam,Right anteromedial visual area
+6,L-VlSam,Left anteromedial visual area
+7,R-VlSl,Right lateral visual area
+8,L-VlSl,Left lateral visual area
+9,R-VlSli,Right laterointermediate visual area
+10,L-VlSli,Left laterointermediate visual area
+11,R-VlSpl,Right posterolateral visual area
+12,L-VlSpl,Left posterolateral visual area
+13,R-VlSpor,Right postrhinal visual area
+14,L-VlSpor,Left postrhinal visual area
+15,R-VlSal,Right anterolateral visual area
+16,L-VlSal,Left anterolateral visual area
+17,R-RSPagl,"Right retrosplenial area, lateral agranular"
+18,L-RSPagl,"Left retrosplenial area, lateral agranular"
+19,R-RSPd,"Right retrosplenial area, dorsal part"
+20,L-RSPd,"Left  retrosplenial area, dorsal part"
+21,R-RSPv,"Right retrosplenial area, ventral part"
+22,L-RSPv,"Left retrosplenial area, ventral part"
+23,R-SC,Right superior colliculus
+24,L-SC,Left superior colliculus
+25,R-IC,Right Inferior colliculus
+26,L-IC,Left Inferior colliculus
+27,R-TEa,Right temporal association areas
+28,L-Tea,Left temporal association areas
+29,R-AUD,Right auditory area
+30,L-AUD,Right auditory area
+31,R-PTLp,Right posterior parietal association areas
+32,L-PTLp,Left posterior parietal association areas
+33,R-SSp-bfd,"Right primary somatosensory area, barrel"
+34,L-SSP-bfd,"Left primary somatosensory area, barrel"
+35,R-SSs,Right supplemental somatosensory area
+36,L-SSs,Left supplemental somatosensory area
+37,R-SSp-tr,"Right primamry somatosensory area, trunk"
+38,L-SSP-tr,"Left primamry somatosensory area, trunk"
+39,R-SSp-n,"Right primamry somatosensory area, nose"
+40,L-SSP-n,"Left primamry somatosensory area, nose"
+41,R-SSp-un,"Right primary somatosensory area,  unassigned"
+42,L-SSp-un,"Right primary somatosensory area, unassigned"
+43,R-SSp-ul,"Right primary somatosensory area, upper limb"
+44,L-SSp-ul,"Left primary somatosensory area, upper limb"
+45,R-SSp-ll,"Right primary somatosensory area, lower limb"
+46,L-SSp-ll,"Left primary somatosensory area, lower limb"
+47,R-SSp-m,"Right primary somatosensory area, mouth"
+48,L-SSP-m,"Left primary somatosensory area, mouth"
+49,R-MOp,Right primary  motor area
+50,L-MOp,Left primary motor area
+51,R-MOs,Right secondary motor area
+52,L-MOs,Left secondary motor area
+53,R-ACA,Right anterior cingulate area
+54,L-ACA,Left anterior cingulate area
+55,R-PL,Right prelimbic area
+56,L-PL,Left prelimbic area
