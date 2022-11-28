@@ -54,7 +54,7 @@ if isempty(index)
     index=1:nimage;
 end
 %%
-nread=length(find(index<=size(tiffs,1))==1);
+nread=length(find(index<=size(tiffs,1)));
 %data=zeros(info(1).Height,info(2).Width,nread);
 data=zeros(info(1).Height,info(1).Width,nread,'single');
 for i=1:length(index)
