@@ -22,7 +22,7 @@ params.signalsExtraction.firstCaFrame = 1; %1 if first frame blue
 params.signalsExtraction.sigs = 'RCaMP_AC';% 'blueuv' or 'RCaMP_AC'
 params.signalsExtraction.blueuvRatio = 1;
 params.resizeRatio = 0.5; %downsample images 
-
+params.angle2rotate=180; %rotation angle; 
 % detrending filter params
 params.deterend.filtLen = 1000;
 params.deterend.filtcutoff = 0.001;
