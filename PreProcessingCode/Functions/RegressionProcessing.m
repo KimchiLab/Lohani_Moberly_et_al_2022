@@ -1,4 +1,4 @@
-function [dFoF,dFoF_parcells, R,C]= RegressionProcessing(dFoF,R,C,params)
+function [dFoF,dFoF_parcells, R,C]= RegressionProcessing(dFoF,R,C,params,outputPath)
 %%written by Hadas Benisty 2019 and edited/modified by Sweyta Lohani
 %Does the third step of Meso 1P data processing by regressing out uv using
 %spatial regression method
