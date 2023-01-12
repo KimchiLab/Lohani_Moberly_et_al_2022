@@ -66,7 +66,7 @@ outputPath=fullfile(outputFolder,subStr);
 
 %% preprocessing step 3 (hemodynamice correction with uv signal)-- recommend doing it on high perfomrance computing clusters 
 if params.regressUV
- [dFoF,dFoF_parcells, R,C]= RegressionProcessing(dFoF,R,C,params) ; 
+ [dFoF,dFoF_parcells, R,C]= RegressionProcessing(dFoF,R,C,params,outputPath) ; 
 end
 
 %% preprprocessing step 4 (smrx file extraction) 
