@@ -30,7 +30,7 @@ for i = 1:length(names)
             dFoF.(names{i})=dFoF.(names{i})(:,1:minsize);
             [output_sig, sig_blue, sig_uv] = spatial_regression(dFoF.(names{i}), dFoF.uv, mask, params.patchSize, 0);
             save(fullfile(outputPath, strcat('SVDOut',names{i})),'output_sig', 'sig_blue','sig_uv','-v7.3' );
-            dFoF.(namesi})=output_sig;clear output_sig;
+            dFoF.(names{i})=output_sig;clear output_sig;
         end
     end
 end
