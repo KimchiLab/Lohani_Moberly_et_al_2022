@@ -35,41 +35,39 @@ if nargin==6
     TmpFile=varargin{6};
 end 
 %%
-% local=['C','D','E','F','G'];
-%% get the name of the first file in the tiff sequence
-filename=fullfile(filePath,tiffs(1).name);
-if movelocal
-    [pathstr, name]=fileparts(filename);
-    if isempty(pathstr)
-        filename=[pwd,'/',filename];
-    end
-    copyfile(filename, TmpFile,'f');
     filename=TmpFile;
     disp('create local copy');
-end
 
+%Initialize data
+data_start_ind = 0;
+
+%Get base parameters from first image
+filename=fullfile(filePath,tiffs(1).name);
 info=imfinfo(filename);
-nimage=length(info);
-if isempty(index)
-    index=1:nimage;
-end
-%%
-nread=length(find(index<=size(tiffs,1)));
-%data=zeros(info(1).Height,info(2).Width,nread);
-data=zeros(info(1).Height,info(1).Width,nread,'single');
-for i=1:length(index)
-    if index(i)<=size(tiffs,1)
-        filename=fullfile(filePath,tiffs(index(i)).name);
-        if movelocal
-            [pathstr, name]=fileparts(filename);
-            if isempty(pathstr)
-                filename=[pwd,'/',filename];
-            end
-            copyfile(filename, TmpFile,'f');
-            filename=TmpFile;
+
+data = zeros(info(1).Height,info(1).Width,length(info)*size(tiffs, 1),'single');
+%Go through list of tiff files
+for file_num=1:size(tiffs, 1)
+    filename=fullfile(filePath,tiffs(file_num).name);
+
+    if movelocal %Copy locally if desired
+        [pathstr, name]=fileparts(filename);
+        if isempty(pathstr)
+            filename=[pwd,'/',filename];
         end
-        data(:,:,i)=imread(filename);
-    else
-        break;
+        copyfile(filename, TmpFile,'f');
+        filename=fullfile(TmpFile,tiffs(file_num).name);
     end
+
+    %Get filename info to set length param
+    info = imfinfo(filename);
+
+    %Read all images of the stack to data
+    for frame = 1:length(info)
+        data(:,:, data_start_ind+frame) ...
+            = imread(filename, "Index", frame);
+    end
+
+    %Iterate start point for next tif file
+    data_start_ind = data_start_ind+length(info);
 end

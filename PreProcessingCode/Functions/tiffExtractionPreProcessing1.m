@@ -18,14 +18,14 @@ else
     params.signalsExtraction.sigs = 'blueuv';
     params.signalsExtraction.firstCaFrame = 1;
     params.signalsExtraction.blueuvRatio = 1;
-    resizeRatio = 0.5;
+    resizeRatio = 1;
     end 
     
     if strcmp(params.signalsExtraction.sigs,'RCaMP_AC')
     params.signalsExtraction.sigs = 'RCaMP_AC';
     params.signalsExtraction.blueuvRatio = 1;
     params.signalsExtraction.firstCaFrame = 1;
-    resizeRatio = 0.5;
+    resizeRatio = 1;
     end 
 end
 

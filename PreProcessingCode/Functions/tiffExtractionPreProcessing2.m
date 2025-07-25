@@ -8,7 +8,7 @@ if nargin <5
     params.deterend.filtLen = 1000;
     params.deterend.filtcutoff = 0.001;
     params.deterend.method = 'FIR';
-    params.angle2rotate = -180;
+    params.angle2rotate = 180;
 end
 
 %% Registration
@@ -50,8 +50,10 @@ for i = 1:length(siginds)
 end
 clear mov sigsMov
 %% register movies to allen atlas and parcellate into brain regions
-disp(['Atlas Registration for' tiffsPath]);
-load('parcells_updated121519.mat'); parcells=parcells_new;parcells_template=(mat2gray(parcells.CombinedParcells));%load new parcells
+disp(['Atlas Registration for: ' tiffsPath]);
+load('parcells_updated121519.mat'); 
+parcells=parcells_new;
+parcells_template=(mat2gray(parcells.CombinedParcells));%load new parcells
 tformfile = fullfile(outputPath, 'tform_blue.mat' );
 if ~exist(tformfile, 'file')
     [tform,R,C,movingPoints,fixedPoints] = get_alignment_CotrolPoints_transform_prompt(firstFrame.blue,parcells_template,R,C,parcells.movingPoints,parcells.fixedPoints); % do alignment based on control points manually selected on GUI, you can pass what template you want to use
@@ -76,7 +78,7 @@ end
 
 %% parcellate data
 for i = 1:length(names)
-    disp(['Parcellating' names{i}]);
+    disp(['Parcellating ' names{i}]);
     dFoF_parcells.(names{i}) = pixels2rois(dFoF.(names{i}), parcells);
 end
 
