@@ -17,13 +17,18 @@ switch paramsSignalsExtraction.sigs
         sigsMov.blue=zeros(R*C,nframes+100,'uint16');
         sigsMov.uv=zeros(R*C,nframes+100,'uint16');
         for iframe=1:nframes
-            if mod(iframe,2000)==0
+            if mod(iframe,4018)==0
                 disp(['Checking Dropped Frames, done ',num2str(iframe),' frames']);
             end
             currentframe=mov(:,:,iframe);
             if iframe<10
-                uvframe_linear=secondframe_linear;
-                blframe_linear=firstframe_linear;
+                if mean(firstframe_linear) < mean(secondframe_linear)
+                    uvframe_linear=firstframe_linear;
+                    blframe_linear=secondframe_linear;
+                else
+                    uvframe_linear=secondframe_linear;
+                    blframe_linear=firstframe_linear;
+                end
             elseif ind_uv-1>0 && ind_bl-1>0
                 %uvframe_linear=imwarp(imgdata_uv(:,:,ind_uv-1),invtform,'OutputView',imref2d(size(template)),'Fillvalues',0);
                 %uvframe_linear=double(reshape(uvframe_linear(68:188,68:188),[],1));
